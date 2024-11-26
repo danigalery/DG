@@ -55,7 +55,7 @@
   font-weight: 700; /* Pilih ketebalan sesuai keinginan (400 atau 700) */
   color: #ffffff; /* Warna teks */
   text-align: center;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   display: inline-block;
   white-space: nowrap; /* Hindari teks berpindah ke baris baru */
   overflow: hidden; /* Sembunyikan teks di luar area */
@@ -89,7 +89,7 @@
     font-size: 10px;
     font-weight: 400;
     color: #f3eded; /* Warna teks */
-    margin-top: 8px;
+    margin-top: 5px;
     font-style: italic;
 }
 
@@ -108,82 +108,151 @@
     }
 }
 
-  /* Best Seller Container */
+  /* Best Seller Section */
+.best-seller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5; /* Warna latar belakang */
+  border-radius: 15px;
+  padding: 2rem 1rem;
+}
+
+.best-seller-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Container untuk produk dengan gulir horizontal */
 .best-seller-container {
-  display: flex; /* Membuat elemen saling berjejer secara horizontal */
-  gap: 1rem; /* Jarak antar produk */
-  overflow-x: auto; /* Mengaktifkan scroll horizontal */
-  padding: 1rem 0; /* Spasi atas dan bawah */
-  scrollbar-width: thin; /* Membuat scrollbar lebih tipis */
-  scrollbar-color: #25d366 #f0f0f0; /* Warna scrollbar */
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto; /* Aktifkan scroll horizontal */
+  padding-bottom: 1rem;
+  scrollbar-width: thin; /* Custom scrollbar untuk browser yang mendukung */
+  scrollbar-color: #25d366 #f0f0f0;
+  width: 100%; /* Pastikan kontainer memenuhi lebar */
 }
 
 .best-seller-container::-webkit-scrollbar {
   height: 8px; /* Tinggi scrollbar */
 }
-
 .best-seller-container::-webkit-scrollbar-thumb {
   background: #25d366; /* Warna scrollbar */
-  border-radius: 10px; /* Membuat ujung scrollbar melengkung */
+  border-radius: 10px;
 }
-
 .best-seller-container::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Warna latar scrollbar */
+  background: #f0f0f0; /* Warna track scrollbar */
 }
 
-/* Card Produk */
-.best-seller-container .product-card {
-  flex: 0 0 auto; /* Memastikan elemen tetap di baris yang sama */
-  width: 250px; /* Lebar setiap kartu produk */
+/* Kartu produk */
+.product-card {
+  flex: 0 0 200px; /* Atur lebar tetap untuk setiap kartu */
   background: white;
-  border-radius: 10px; /* Membuat sudut membulat */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan ringan */
-  text-align: center; /* Teks di tengah */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
   padding: 1rem;
-  transition: transform 0.3s ease; /* Animasi saat hover */
+  transition: transform 0.3s ease;
 }
 
-.best-seller-container .product-card:hover {
-  transform: translateY(-5px); /* Efek hover mengangkat elemen */
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
-.best-seller-container .product-image {
-  width: 100%; /* Gambar memenuhi lebar kartu */
-  height: auto; /* Proporsi tetap */
-  border-radius: 8px; /* Sudut gambar membulat */
-  margin-bottom: 0.5rem; /* Spasi bawah gambar */
-}
-
-.best-seller-container .product-name {
-  font-size: 1.2rem; /* Ukuran nama produk */
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-  color: #333; /* Warna teks */
-}
-
-.best-seller-container .product-price {
-  font-size: 1.1rem;
-  color: #e44d26; /* Warna harga */
-  font-weight: bold;
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
   margin-bottom: 0.5rem;
 }
 
-/* Tombol WhatsApp */
-.best-seller-container .whatsapp-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #25d366; /* Warna hijau WhatsApp */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px; /* Membuat sudut tombol membulat */
-  font-size: 0.9rem;
+.product-name {
+  font-size: 1.2rem;
   font-weight: bold;
-  transition: background-color 0.3s ease; /* Animasi hover */
+  color: #333;
+  margin: 0.5rem 0;
 }
 
-.best-seller-container .whatsapp-button:hover {
-  background-color: #1ebe57; /* Warna lebih gelap saat hover */
+.product-price {
+  font-size: 1.1rem;
+  color: #e44d26;
+  font-weight: bold;
 }
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #25d366, #128c7e); /* Gradasi warna hijau khas WhatsApp */
+  color: white;
+  font-size: 1rem; /* Ukuran teks */
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px; /* Membuat tombol dengan sudut melengkung */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animasi hover */
+  text-align: center;
+  white-space: nowrap; /* Hindari teks terpotong atau pindah baris */
+}
+
+.whatsapp-button:hover {
+  background: #1ebe57; /* Warna tombol saat hover */
+  transform: scale(1.05); /* Zoom saat tombol dihover */
+}
+
+.whatsapp-button:active {
+  transform: scale(0.95); /* Efek saat tombol diklik */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Kurangi bayangan */
+}
+
+/* Media Query untuk Handphone */
+@media (max-width: 768px) {
+  /* Best Seller Section */
+  .best-seller {
+    padding: 1rem 0.5rem; /* Kurangi padding untuk layar kecil */
+    border-radius: 15px; /* Sesuaikan radius */
+  }
+
+  .best-seller-title {
+    font-size: 1.5rem; /* Kurangi ukuran teks */
+    margin-bottom: 0.75rem;
+  }
+
+  /* Container untuk produk */
+  .best-seller-container {
+    gap: 0.5rem; /* Kurangi jarak antar kartu produk */
+  }
+
+  /* Kartu produk */
+  .product-card {
+    flex: 0 0 150px; /* Kurangi lebar kartu pada layar kecil */
+    padding: 0.75rem; /* Kurangi padding */
+  }
+
+  .product-image {
+    border-radius: 6px; /* Sesuaikan radius */
+  }
+
+  .product-name {
+    font-size: 1rem; /* Kurangi ukuran teks */
+  }
+
+  .product-price {
+    font-size: 0.9rem; /* Sesuaikan ukuran teks harga */
+  }
+
+  /* Tombol WhatsApp */
+  .whatsapp-button {
+    font-size: 0.9rem; /* Sesuaikan ukuran font tombol */
+    padding: 0.5rem 1rem; /* Kurangi padding */
+    border-radius: 6px; /* Sesuaikan radius tombol */
+  }
+}
+
+
   
   /* About Section */
   .about-container {
