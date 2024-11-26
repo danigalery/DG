@@ -41,10 +41,11 @@
 
 /* Styling Welcome to */
 #home p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     margin: 0;
+    line-height: 1.1; /* Atur jarak antar baris menjadi lebih rapat */
 }
 
 /* Gaya untuk teks Dani Galery Jepara */
@@ -83,13 +84,28 @@
 }
 
 
-/* Slogan styling */
+/* Style untuk slogan */
 #home .slogan {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ddd;
-  margin-top: 1rem;
+    font-size: 10px;
+    font-weight: 400;
+    color: #f3eded; /* Warna teks */
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Tambahan untuk tampilan responsif */
+@media (max-width: 768px) {
+    #home {
+        padding: 30px 10px;
+    }
+
+    #home .brand-logo {
+        font-size: 28px;
+    }
+
+    #home .slogan {
+        font-size: 10px;
+    }
 }
 
   /* Best Seller Container */
